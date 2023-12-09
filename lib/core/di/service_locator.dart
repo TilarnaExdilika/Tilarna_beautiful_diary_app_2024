@@ -7,7 +7,7 @@ import 'package:beautiful_diary_app/src/news/data/repository/news_repository_imp
 import 'package:beautiful_diary_app/src/news/domain/repository/news_repository.dart';
 import 'package:beautiful_diary_app/src/news/domain/usecase/get_recent_news_usecase.dart';
 
-import '../../src/news/presentation/bloc/main_news_bloc.dart';
+import '../../src/news/blocs/main_news_bloc.dart';
 
 final serviceLocator = GetIt.instance;
 

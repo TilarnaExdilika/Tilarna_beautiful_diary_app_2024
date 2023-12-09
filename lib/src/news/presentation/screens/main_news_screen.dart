@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:beautiful_diary_app/src/news/domain/entity/news_entity.dart';
 
-import '../bloc/main_news_bloc.dart';
+import '../../blocs/main_news_bloc.dart';
 
 class MainNewsScreen extends StatelessWidget {
   const MainNewsScreen({super.key});
