@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:beautiful_diary_app/src/news/domain/entity/news_entity.dart';
+import 'package:beautiful_diary_app/src/dashboard/domain/entity/news_entity.dart';
 
-import '../../blocs/main_news_bloc.dart';
+import '../../blocs/main_bloc.dart';
 
 class MainNewsScreen extends StatelessWidget {
   const MainNewsScreen({super.key});

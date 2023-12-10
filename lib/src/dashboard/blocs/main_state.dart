@@ -1,4 +1,4 @@
-part of 'main_news_bloc.dart';
+part of 'main_bloc.dart';
 
 abstract class MainNewsState extends Equatable {
   @override

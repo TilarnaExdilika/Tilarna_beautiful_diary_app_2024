@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:beautiful_diary_app/src/news/domain/entity/news_entity.dart';
+import 'package:beautiful_diary_app/src/dashboard/domain/entity/news_entity.dart';
 
 class NewsApi {
   final Dio dio;
