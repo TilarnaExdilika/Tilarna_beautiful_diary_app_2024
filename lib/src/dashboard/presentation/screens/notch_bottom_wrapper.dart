@@ -5,7 +5,6 @@ import 'dart:developer';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:beautiful_diary_app/app/config/app_config.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 
 class AnimatedNotchBottomBarWrapper extends StatefulWidget {
   const AnimatedNotchBottomBarWrapper({Key? key}) : super(key: key);
@@ -51,9 +50,9 @@ class _AnimatedNotchBottomBarWrapperState
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: AppColors.neutral_55,
+              color: AppColors.transparent,
               showLabel: true,
-              notchColor: AppColors.white,
+              notchColor: AppColors.neudark_55,
               showShadow: false,
 
               /// restart app if you change removeMargins
@@ -129,8 +128,8 @@ class Page1 extends StatelessWidget {
             children: [
               Image.asset(
                 orientation == Orientation.landscape
-                    ? 'assets/gif/japan_store.gif'
-                    : 'assets/gif/japan_cut_1.gif',
+                    ? 'assets/gif/closed_store.gif'
+                    : 'assets/gif/closed_store_cut_1.gif',
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -151,18 +150,26 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(
-          'assets/gif/japan_cut_2.gif',
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
-        ),
-        Container(
-          child: const Center(child: Text('Page 2')),
-        ),
-      ],
+    return Scaffold(
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          return Stack(
+            children: [
+              Image.asset(
+                orientation == Orientation.landscape
+                    ? 'assets/gif/closed_store.gif'
+                    : 'assets/gif/closed_store_cut_2.gif',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+              ),
+              Container(
+                child: const Center(child: Text('Page 1')),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
@@ -172,18 +179,26 @@ class Page3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(
-          'assets/gif/japan_cut_3.gif',
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
-        ),
-        Container(
-          child: const Center(child: Text('Page 3')),
-        ),
-      ],
+    return Scaffold(
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          return Stack(
+            children: [
+              Image.asset(
+                orientation == Orientation.landscape
+                    ? 'assets/gif/closed_store.gif'
+                    : 'assets/gif/closed_store_cut_3.gif',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+              ),
+              Container(
+                child: const Center(child: Text('Page 1')),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
@@ -193,18 +208,26 @@ class Page4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(
-          'assets/gif/japan_cut_4.gif',
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
-        ),
-        Container(
-          child: const Center(child: Text('Page 4')),
-        ),
-      ],
+    return Scaffold(
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          return Stack(
+            children: [
+              Image.asset(
+                orientation == Orientation.landscape
+                    ? 'assets/gif/closed_store.gif'
+                    : 'assets/gif/closed_store_cut_4.gif',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+              ),
+              Container(
+                child: const Center(child: Text('Page 1')),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
