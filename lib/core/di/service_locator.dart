@@ -18,7 +18,7 @@ setupServiceLocator() async {
   );
 
   // News
-  serviceLocator.registerFactory<MainNewsBloc>(() => MainNewsBloc());
+  serviceLocator.registerFactory<MainBloc>(() => MainBloc());
   serviceLocator.registerLazySingleton<NewsApi>(() => NewsApi(
       dio: serviceLocator(), apiKey: serviceLocator<Constant>().apiKey));
   serviceLocator.registerLazySingleton<NewsRepository>(() => NewsRepositoryImpl(

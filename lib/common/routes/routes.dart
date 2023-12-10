@@ -12,9 +12,8 @@ class AppRouter {
         path: '/',
         builder: (context, state) {
           return BlocProvider.value(
-            value: serviceLocator<MainNewsBloc>()
-              ..add(MainNewsGetRecentNewsEvent()),
-            child: const MainNewsScreen(),
+            value: serviceLocator<MainBloc>()..add(MainGetRecentEvent()),
+            child: const MainScreen(),
           );
         },
       )

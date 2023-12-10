@@ -1,8 +1,8 @@
 part of 'main_bloc.dart';
 
-abstract class MainNewsEvent extends Equatable {
+abstract class MainEvent extends Equatable {
   @override
   List<Object?> get props => [];
 }
 
-class MainNewsGetRecentNewsEvent extends MainNewsEvent {}
+class MainGetRecentEvent extends MainEvent {}

@@ -9,20 +9,20 @@ import 'package:beautiful_diary_app/src/dashboard/domain/usecase/get_recent_news
 part 'main_event.dart';
 part 'main_state.dart';
 
-class MainNewsBloc extends Bloc<MainNewsEvent, MainNewsState> {
-  MainNewsBloc() : super(MainNewsInitialState()) {
-    on<MainNewsGetRecentNewsEvent>(mainNewsGetRecentNewsEvent);
+class MainBloc extends Bloc<MainEvent, MainState> {
+  MainBloc() : super(MainInitialState()) {
+    on<MainGetRecentEvent>(mainNewsGetRecentNewsEvent);
   }
 
   FutureOr<void> mainNewsGetRecentNewsEvent(
-      MainNewsGetRecentNewsEvent event, Emitter<MainNewsState> emit) async {
+      MainGetRecentEvent event, Emitter<MainState> emit) async {
     try {
-      emit(MainNewsLoadingState());
+      emit(MainLoadingState());
       List<NewsEntity> news =
           await serviceLocator<GetRecentNewsUseCase>().call();
-      emit(MainNewsGetRecentNewsSuccessState(news));
+      emit(MainGetRecentNewsSuccessState(news));
     } catch (e) {
-      emit(MainNewsErrorState("Something Went Wrong"));
+      emit(MainErrorState("Something Went Wrong"));
     }
   }
 }

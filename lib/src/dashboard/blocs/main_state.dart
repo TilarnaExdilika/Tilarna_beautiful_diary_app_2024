@@ -1,25 +1,25 @@
 part of 'main_bloc.dart';
 
-abstract class MainNewsState extends Equatable {
+abstract class MainState extends Equatable {
   @override
   List<Object> get props => [];
 }
 
-class MainNewsInitialState extends MainNewsState {}
+class MainInitialState extends MainState {}
 
-class MainNewsLoadingState extends MainNewsState {}
+class MainLoadingState extends MainState {}
 
-class MainNewsGetRecentNewsSuccessState extends MainNewsState {
+class MainGetRecentNewsSuccessState extends MainState {
   final List<NewsEntity> news;
-  MainNewsGetRecentNewsSuccessState(this.news);
+  MainGetRecentNewsSuccessState(this.news);
 
   @override
   List<Object> get props => [news];
 }
 
-class MainNewsErrorState extends MainNewsState {
+class MainErrorState extends MainState {
   final String message;
-  MainNewsErrorState(this.message);
+  MainErrorState(this.message);
 
   @override
   List<Object> get props => [message];
