@@ -3,6 +3,7 @@
 import 'dart:developer';
 
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
+import 'package:beautiful_diary_app/app/config/app_config.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
@@ -50,9 +51,9 @@ class _AnimatedNotchBottomBarWrapperState
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: Color.fromARGB(136, 255, 255, 255),
+              color: AppColors.neutral_55,
               showLabel: true,
-              notchColor: Colors.white,
+              notchColor: AppColors.white,
               showShadow: false,
 
               /// restart app if you change removeMargins
@@ -82,19 +83,6 @@ class _AnimatedNotchBottomBarWrapperState
                   ),
                   itemLabel: 'Page 2',
                 ),
-
-                ///svg example
-                // BottomBarItem(
-                //   inActiveItem: SvgPicture.asset(
-                //     'assets/search_icon.svg',
-                //     color: Colors.blueGrey,
-                //   ),
-                //   activeItem: SvgPicture.asset(
-                //     'assets/search_icon.svg',
-                //     color: Colors.white,
-                //   ),
-                //   itemLabel: 'Page 3',
-                // ),
                 const BottomBarItem(
                   inActiveItem: Icon(
                     Icons.settings,
