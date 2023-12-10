@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'dart:developer';
 
@@ -122,8 +122,27 @@ class Page1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.yellow, child: const Center(child: Text('Page 1')));
+    return Scaffold(
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          return Stack(
+            children: [
+              Image.asset(
+                orientation == Orientation.landscape
+                    ? 'assets/gif/japan_store.gif'
+                    : 'assets/gif/japan_cut_1.gif',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+              ),
+              Container(
+                child: const Center(child: Text('Page 1')),
+              ),
+            ],
+          );
+        },
+      ),
+    );
   }
 }
 
@@ -132,8 +151,19 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.green, child: const Center(child: Text('Page 2')));
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/gif/japan_cut_2.gif',
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
+        Container(
+          child: const Center(child: Text('Page 2')),
+        ),
+      ],
+    );
   }
 }
 
@@ -142,8 +172,19 @@ class Page3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.blue, child: const Center(child: Text('Page 3')));
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/gif/japan_cut_3.gif',
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
+        Container(
+          child: const Center(child: Text('Page 3')),
+        ),
+      ],
+    );
   }
 }
 
@@ -152,8 +193,18 @@ class Page4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.lightGreenAccent,
-        child: const Center(child: Text('Page 4')));
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/gif/japan_cut_4.gif',
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
+        Container(
+          child: const Center(child: Text('Page 4')),
+        ),
+      ],
+    );
   }
 }
