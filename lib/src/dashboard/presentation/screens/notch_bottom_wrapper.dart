@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
-import 'dart:developer';
-
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:beautiful_diary_app/app/config/app_config.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class AnimatedNotchBottomBarWrapper extends StatefulWidget {
   const AnimatedNotchBottomBarWrapper({Key? key}) : super(key: key);
@@ -50,9 +49,9 @@ class _AnimatedNotchBottomBarWrapperState
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: AppColors.transparent,
+              color: AppColors.white.withOpacity(0.1),
               showLabel: true,
-              notchColor: AppColors.neudark_55,
+              notchColor: AppColors.dark,
               showShadow: false,
 
               /// restart app if you change removeMargins
@@ -60,16 +59,19 @@ class _AnimatedNotchBottomBarWrapperState
               bottomBarWidth: 500,
               durationInMilliSeconds: 400,
               bottomBarItems: [
-                const BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.home_filled,
-                    color: Colors.blueGrey,
+                BottomBarItem(
+                  inActiveItem: Lottie.asset(
+                    'assets/lottie/man.json',
+                    repeat: false,
+                    width: 120,
+                    height: 120,
                   ),
-                  activeItem: Icon(
-                    Icons.home_filled,
-                    color: Colors.blueAccent,
+                  activeItem: Lottie.asset(
+                    'assets/lottie/man.json',
+                    width: 120,
+                    height: 120,
                   ),
-                  itemLabel: 'Page 1',
+                  itemLabel: 'Daily',
                 ),
                 const BottomBarItem(
                   inActiveItem: Icon(
@@ -106,9 +108,16 @@ class _AnimatedNotchBottomBarWrapperState
                 ),
               ],
               onTap: (index) {
-                /// perform action on tab change and to update pages you can update pages without pages
-                log('current selected index $index');
-                _pageController.jumpToPage(index);
+                if (MediaQuery.of(context).orientation ==
+                    Orientation.portrait) {
+                  _pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                } else {
+                  _pageController.jumpToPage(index);
+                }
               },
             )
           : null,

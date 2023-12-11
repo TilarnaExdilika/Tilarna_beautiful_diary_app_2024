@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/main_bloc.dart';
+import 'ferris.dart';
 import 'notch_bottom_wrapper.dart';
 
 class MainScreen extends StatelessWidget {
@@ -13,8 +14,8 @@ class MainScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         if (state is MainLoadingState) {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Center(
+            child: Ferris(),
           );
         }
         if (state is MainErrorState) {
