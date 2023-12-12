@@ -47,64 +47,79 @@ class _AnimatedNotchBottomBarWrapperState
       extendBody: true,
       bottomNavigationBar: (bottomBarPages.length <= maxCount)
           ? AnimatedNotchBottomBar(
-              /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: AppColors.white.withOpacity(0.1),
+              color: MediaQuery.of(context).orientation == Orientation.landscape
+                  ? AppColors.transparent
+                  : AppColors.dark.withOpacity(0.4),
               showLabel: true,
-              notchColor: AppColors.dark,
+              notchColor:
+                  MediaQuery.of(context).orientation == Orientation.landscape
+                      ? AppColors.transparent
+                      : AppColors.dark,
               showShadow: false,
-
-              /// restart app if you change removeMargins
               removeMargins: true,
               bottomBarWidth: 500,
-              durationInMilliSeconds: 400,
+              durationInMilliSeconds:
+                  MediaQuery.of(context).orientation == Orientation.landscape
+                      ? 0
+                      : 400,
+              itemLabelStyle: TextStyle(
+                fontFamily: 'Coiny',
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+                foreground: Paint()
+                  ..shader = LinearGradient(
+                    colors: [
+                      AppColors.succubusprimary1,
+                      AppColors.succubusprimary2,
+                    ],
+                    stops: [0.0, 1.0],
+                  ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0)),
+              ),
               bottomBarItems: [
                 BottomBarItem(
                   inActiveItem: Lottie.asset(
-                    'assets/lottie/man.json',
+                    'assets/lottie/search_lottie.json',
                     repeat: false,
-                    width: 120,
-                    height: 120,
                   ),
                   activeItem: Lottie.asset(
-                    'assets/lottie/man.json',
-                    width: 120,
-                    height: 120,
+                    'assets/lottie/search_lottie.json',
+                    repeat: false,
                   ),
-                  itemLabel: 'Daily',
+                  itemLabel: 'Diary',
                 ),
-                const BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.star,
-                    color: Colors.blueGrey,
+                BottomBarItem(
+                  inActiveItem: Lottie.asset(
+                    'assets/lottie/search_lottie.json',
+                    repeat: false,
                   ),
-                  activeItem: Icon(
-                    Icons.star,
-                    color: Colors.blueAccent,
+                  activeItem: Lottie.asset(
+                    'assets/lottie/search_lottie.json',
+                    repeat: false,
                   ),
-                  itemLabel: 'Page 2',
+                  itemLabel: 'Task',
                 ),
-                const BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.settings,
-                    color: Colors.blueGrey,
+                BottomBarItem(
+                  inActiveItem: Lottie.asset(
+                    'assets/lottie/search_lottie.json',
+                    repeat: false,
                   ),
-                  activeItem: Icon(
-                    Icons.settings,
-                    color: Colors.pink,
+                  activeItem: Lottie.asset(
+                    'assets/lottie/search_lottie.json',
+                    repeat: false,
                   ),
-                  itemLabel: 'Page 3',
+                  itemLabel: 'Notify',
                 ),
-                const BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.person,
-                    color: Colors.blueGrey,
+                BottomBarItem(
+                  inActiveItem: Lottie.asset(
+                    'assets/lottie/search_lottie.json',
+                    repeat: false,
                   ),
-                  activeItem: Icon(
-                    Icons.person,
-                    color: Colors.yellow,
+                  activeItem: Lottie.asset(
+                    'assets/lottie/search_lottie.json',
+                    repeat: false,
                   ),
-                  itemLabel: 'Page 4',
+                  itemLabel: 'Profile',
                 ),
               ],
               onTap: (index) {
@@ -137,8 +152,8 @@ class Page1 extends StatelessWidget {
             children: [
               Image.asset(
                 orientation == Orientation.landscape
-                    ? 'assets/gif/closed_store.gif'
-                    : 'assets/gif/closed_store_cut_1.gif',
+                    ? 'assets/gif/pokemon.gif'
+                    : 'assets/gif/pokemon_1.gif',
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -166,8 +181,8 @@ class Page2 extends StatelessWidget {
             children: [
               Image.asset(
                 orientation == Orientation.landscape
-                    ? 'assets/gif/closed_store.gif'
-                    : 'assets/gif/closed_store_cut_2.gif',
+                    ? 'assets/gif/pokemon.gif'
+                    : 'assets/gif/pokemon_2.gif',
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -195,8 +210,8 @@ class Page3 extends StatelessWidget {
             children: [
               Image.asset(
                 orientation == Orientation.landscape
-                    ? 'assets/gif/closed_store.gif'
-                    : 'assets/gif/closed_store_cut_3.gif',
+                    ? 'assets/gif/pokemon.gif'
+                    : 'assets/gif/pokemon_3.gif',
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -224,8 +239,8 @@ class Page4 extends StatelessWidget {
             children: [
               Image.asset(
                 orientation == Orientation.landscape
-                    ? 'assets/gif/closed_store.gif'
-                    : 'assets/gif/closed_store_cut_4.gif',
+                    ? 'assets/gif/pokemon.gif'
+                    : 'assets/gif/pokemon_4.gif',
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
