@@ -10,7 +10,4 @@ abstract class AppColors {
   static Color neudark_55 = const Color.fromARGB(135, 0, 0, 0);
   //=================Apps====================
   static Color primary = const Color.fromARGB(255, 255, 255, 255);
-  //=================Theme_Succubus====================
-  static Color succubusprimary1 = const Color(0xFF4BE1EC);
-  static Color succubusprimary2 = const Color(0xFFCB5EEE);
 }

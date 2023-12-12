@@ -5,6 +5,8 @@ import 'package:beautiful_diary_app/app/config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../../common/themes/themes.dart';
+
 class AnimatedNotchBottomBarWrapper extends StatefulWidget {
   const AnimatedNotchBottomBarWrapper({Key? key}) : super(key: key);
 
@@ -49,20 +51,17 @@ class _AnimatedNotchBottomBarWrapperState
           ? AnimatedNotchBottomBar(
               notchBottomBarController: _controller,
               color: MediaQuery.of(context).orientation == Orientation.landscape
-                  ? AppColors.transparent
+                  ? AppColors.dark.withOpacity(0.2)
                   : AppColors.dark.withOpacity(0.4),
               showLabel: true,
               notchColor:
                   MediaQuery.of(context).orientation == Orientation.landscape
-                      ? AppColors.transparent
+                      ? AppColors.dark.withOpacity(0.6)
                       : AppColors.dark,
               showShadow: false,
               removeMargins: true,
               bottomBarWidth: 500,
-              durationInMilliSeconds:
-                  MediaQuery.of(context).orientation == Orientation.landscape
-                      ? 0
-                      : 400,
+              durationInMilliSeconds: 400,
               itemLabelStyle: TextStyle(
                 fontFamily: 'Coiny',
                 fontSize: 16,
@@ -70,8 +69,8 @@ class _AnimatedNotchBottomBarWrapperState
                 foreground: Paint()
                   ..shader = LinearGradient(
                     colors: [
-                      AppColors.succubusprimary1,
-                      AppColors.succubusprimary2,
+                      Pokemon.pokemonprimary1,
+                      Pokemon.pokemonprimary2,
                     ],
                     stops: [0.0, 1.0],
                   ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0)),
@@ -79,44 +78,44 @@ class _AnimatedNotchBottomBarWrapperState
               bottomBarItems: [
                 BottomBarItem(
                   inActiveItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/camera.json',
                     repeat: false,
                   ),
                   activeItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/camera.json',
                     repeat: false,
                   ),
                   itemLabel: 'Diary',
                 ),
                 BottomBarItem(
                   inActiveItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/layers.json',
                     repeat: false,
                   ),
                   activeItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/layers.json',
                     repeat: false,
                   ),
                   itemLabel: 'Task',
                 ),
                 BottomBarItem(
                   inActiveItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/shooting_stars.json',
                     repeat: false,
                   ),
                   activeItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/shooting_stars.json',
                     repeat: false,
                   ),
                   itemLabel: 'Notify',
                 ),
                 BottomBarItem(
                   inActiveItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/confetti.json',
                     repeat: false,
                   ),
                   activeItem: Lottie.asset(
-                    'assets/lottie/search_lottie.json',
+                    'assets/lottie/confetti.json',
                     repeat: false,
                   ),
                   itemLabel: 'Profile',

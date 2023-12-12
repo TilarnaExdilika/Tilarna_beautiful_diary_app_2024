@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+part 'pokemon.dart';
+
 class AppThemes {
   static ThemeData themeData = ThemeData(
     appBarTheme: AppThemes.appBarTheme,
